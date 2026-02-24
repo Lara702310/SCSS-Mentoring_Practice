@@ -1,0 +1,367 @@
+@use "./reset";
+@use "./mixins" as m;
+@use "./variabels" as v;
+
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=DM+Serif+Display:ital@0;1&family=David+Libre:wght@400;500;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght,YOPQ@100..900,300&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "David Libre", serif;
+    max-width: 115.3rem;
+    width: 100%;
+    height: 100%;
+    margin-inline: auto;
+}
+
+.nav-bar-container {
+    width: 100%;
+    padding: 3rem 0;
+    height: 5.5rem;
+    margin-bottom: 20rem;
+
+    .nav-bar {
+        @include m.flex-box($justify: space-between, $align: baseline);
+    }
+
+    .logo img {
+        width: 19.8rem;
+        height: 5.5rem;
+    }
+
+    .nav-links {
+        width: 43.4rem;
+        height: 5.5rem;
+        @include m.flex-box($justify: space-evenly);
+        gap: 2rem;
+
+        li a {
+            @include m.font-style($size: 1.6rem, $weight: 400, $line: 2.9rem, $color: v.$bg-nav-color);
+        }
+    }
+}
+
+.book-btn {
+    width: 16.7rem;
+    height: 6.4rem;
+    @include m.btns-style;
+    background-color: v.$bg-btn-color;
+    @include m.font-style($size: 2rem, $weight: 500, $line: 2.9rem, $color: v.$bg-btn-font-color);
+
+}
+
+.main-content {
+    width: 100%;
+
+}
+
+.hero-section {
+    @include m.flex-box($justify: space-between, $align: center);
+    margin: 10rem 0 20rem 0;
+
+    .hero-banner {
+        width: 45%;
+        height: 70rem;
+        position: relative;
+        @include m.flex-base($justify: space-evenly, $align: start, $direction: column);
+
+        .circle-text {
+            max-width: 10.4rem;
+            margin-left: -5rem;
+            transform: translateY(-8rem);
+        }
+
+    }
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+
+    .social-link {
+        border-radius: 50%;
+        border: 1px solid black;
+        width: 4rem;
+        height: 4rem;
+        font-size: 2rem;
+        background-color: transparent;
+        cursor: pointer;
+        margin-right: 1rem;
+        transition: all 0.3s ease;
+
+        img {
+            width: 2rem;
+            height: 2rem;
+            filter: drop-shadow(0 0.2rem 0.2rem rgba(0, 0, 0, 0.25));
+            transition: transform 0.3s ease;
+        }
+
+        &:hover {
+            background-color: #f0f0f0;
+            img {
+                transform: translateY(-2px);
+                filter: drop-shadow(0 0.4rem 0.3rem rgba(0, 0, 0, 0.35));
+            }
+        }
+    }
+}
+
+
+.hero-title {
+    height: 14rem;
+    @include m.font-style($size: 6rem, $weight: 700, $line: 7.2rem, $color: v.$bg-nav-color);
+}
+
+.sub-title {
+    width: 37.6rem;
+    height: 11.5rem;
+    @include m.font-style($size: 1.6rem, $weight: 400, $line: 2.9rem, $color: v.$sub-title-color);
+    letter-spacing: 3%;
+}
+
+.btns {
+    height: 10rem;
+    display: flex;
+    gap: 20px;
+
+    button {
+        @include m.btns-style;
+        @include m.font-style($size: 2rem, $weight: 500, $line: 2.9rem, $color: v.$bg-btn-font-color);
+    }
+
+    .menu-btn {
+        background-color: v.$bg-btn-small-color;
+        width: 12rem;
+        height: 5.4rem;
+    }
+
+    .book-btn {
+        background-color: v.$bg-btn-color;
+        width: 16.7rem;
+        height: 5.4rem;
+    }
+}
+
+
+.image {
+    img {
+        width: 51.6rem;
+    }
+}
+
+.special-dishes {
+    text-align: center;
+    margin-bottom: 6.9rem;
+
+    h1 {
+        margin-bottom: 2rem;
+        @include m.font-style($size: 6rem, $weight: 700, $line: 6.5rem, $color: v.$bg-nav-color);
+    }
+
+    span {
+
+        text-align: start;
+        width: 37.6rem;
+        height: 6.5rem;
+        @include m.font-style($size: 1.6rem, $weight: 400, $line: 2.9rem, $color: v.$sub-title-color);
+    }
+}
+
+
+.food-cards {
+    width: 100%;
+    margin-inline: auto;
+    display: flex;
+    gap: 2rem;
+
+
+    .food-item {
+        width: 30.9rem;
+        height: 44.29rem;
+        align-items: center;
+        @include m.flex-base($justify: space-evenly, $align: centr, $direction: column);
+    }
+
+    .img-price {
+        width: 20.7rem;
+        position: relative;
+    }
+
+    .price {
+        position: absolute;
+        top: 3rem;
+        left: 13rem;
+    }
+
+    h3 {
+        @include m.font-style($size: 2rem, $weight: 700, $line: 2.6rem, $color: v.$bg-nav-color);
+    }
+
+    p {
+        width: 22.5rem;
+        height: 7rem;
+        @include m.font-style($size: 1.5rem, $weight: 400, $line: 2.6rem, $color: v.$sub-title-color);
+    }
+
+}
+
+.sub-banner {
+    margin-bottom: 30rem;
+    @include m.flex-box($justify: space-between, $align: center);
+
+    .image img {
+        width: 71.9rem;
+        height: 66.7rem;
+    }
+}
+
+.banner-content {
+
+    @include m.flex-base($align: centr, $direction: column);
+
+    h1 {
+        margin-bottom: 2rem;
+    }
+}
+
+.chef {
+    @include m.flex-box($justify: space-between, $align: center);
+
+    .chef-content {
+        .btns {
+            margin-left: 5rem;
+        }
+    }
+
+    .chef-title {
+        h1 {
+            height: 10rem;
+        }
+    }
+
+    .sub-content {
+        @include m.flex-wrap($flex-direction: row, $flex-wrap: wrap);
+        margin: 3rem 0 3rem 0;
+
+        li {
+            width: 29.2rem;
+            height: 5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            @include m.font-style($size: 1.5rem, $weight: 400, $line: 2.1rem, $color: v.$sub-title-color);
+            letter-spacing: 3%;
+
+            &::before {
+                display: inline-block;
+                content: "\2713";
+                width: 2.4rem;
+                height: 2.4rem;
+                border-radius: 50%;
+                color: aliceblue;
+                font-size: 1.2rem;
+                text-align: center;
+                background-color: v.$bg-btn-color;
+                margin-right: 0.5rem;
+            }
+        }
+    }
+
+    img {
+        width: 50.7rem;
+        height: 69.5rem;
+    }
+}
+
+
+.wrapper {
+    margin: 12rem 0 10rem 0;
+
+    width: 100%;
+    height: 41rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 9rem;
+    row-gap: 3rem;
+}
+
+.logo {
+    img {
+        margin-bottom: 3rem;
+    }
+
+    span {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+.footer-nav-bar {
+    width: 12.7rem;
+    height: 19.7rem;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+
+        li {
+            @include m.font-style($size: 1.6rem, $weight: 400, $line: 3.5rem, $color: v.$sub-title-color);
+        }
+    }
+
+    span {
+        @include m.font-style($size: 1.2rem, $weight: 700, $line: 4rem, $color: v.$bg-nav-color);
+    }
+}
+
+.social-links {
+    @include m.flex-wrap($flex-direction: row, $flex-wrap: wrap);
+
+    span {
+        flex-basis: 100%;
+        display: block;
+        margin-bottom: 1rem;
+        @include m.font-style($size: 1.2rem, $weight: 700, $line: 4rem, $color: v.$bg-nav-color);
+    }
+}
+
+.footer-info {
+    width: 50%;
+    margin-bottom: 5rem;
+
+    span {
+        flex-basis: 100%;
+        display: block;
+        margin-bottom: 0.5rem;
+        @include m.font-style($size: 1.2rem, $weight: 700, $line: 4rem, $color: v.$bg-nav-color);
+    }
+}
+
+.sub-content {
+    @include m.flex-wrap($flex-direction: row, $flex-wrap: wrap);
+
+    li {
+        width: 14.9rem;
+        height: 2rem;
+        margin: 1rem 3rem 1rem 0;
+        @include m.font-style($size: 1.6rem, $weight: 400, $color: v.$sub-title-color);
+        letter-spacing: 3%;
+    }
+}
+
+.footer-end {
+    width: 100%;
+    @include m.flex-box($justify: space-between, $align: null);
+
+    span {
+        cursor: pointer;
+        @include m.font-style($size: 1.6rem, $weight: 700, $line: 2.9rem, $color: v.$sub-title-color);
+    }
+
+    p {
+        display: inline-block;
+        @include m.font-style($size: 1.6rem, $weight: 400, $line: 2.9rem, $color: v.$sub-title-color);
+    }
+
+    .end-paragraph {
+        width: 26rem;
+        @include m.flex-box($justify: space-between, $align: null);
+    }
+}

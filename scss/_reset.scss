@@ -1,0 +1,59 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+
+    
+    ul,
+    li {
+        display: inline-block;
+        list-style: none;
+    }
+
+    button {
+        display: inline-block;
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+    }
+
+    span {
+        display: inline-block;
+    }
+
+    a,
+    a:visited {
+        display: inline-block;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    a:focus,
+    a:active {
+        outline: none;
+    }
+
+    img {
+        display: inline-block;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        
+    }
+
+}
+
+html {
+    font-size: 62.5%;
+}
+
